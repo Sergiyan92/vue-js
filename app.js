@@ -2,6 +2,8 @@ new Vue({
   el: "#app",
   data: {
     counter: 0,
+    name: "",
+    cheked: false,
   },
   config: {
     keyCodes: {

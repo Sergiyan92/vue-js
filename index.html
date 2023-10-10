@@ -8,8 +8,12 @@
   </head>
   <body>
     <div id="app">
+      <h2>{{name}}</h2>
       <label>Name:</label>
-      <input type="text" @keyup.113="changeName" />
+      <input type="text" v-model="name" @keyup.113="changeName" />
+      <br />
+      <label>Checkbox value: {{cheked}}</label>
+      <input type="checkbox" v-model="cheked" />
 
       <h2>{{counter}}</h2>
       <button @click="counter++">+1</button>
