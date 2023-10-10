@@ -8,6 +8,9 @@
   </head>
   <body>
     <div id="app">
+      <label>Name:</label>
+      <input type="text" @keyup.113="changeName" />
+
       <h2>{{counter}}</h2>
       <button @click="counter++">+1</button>
       <button @click.once="substract">-1</button>
