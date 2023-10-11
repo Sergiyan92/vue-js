@@ -8,40 +8,22 @@
   </head>
   <body>
     <div id="app">
-      <button @click="error = !error">Toggle Error</button>
-      <button @click="success = !success">Toggle Success</button>
-      <p v-if="error">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-        deleniti fuga et sapiente quaerat, rerum tenetur voluptas quisquam
-        fugiat nisi praesentium eveniet nulla, rem eum velit aspernatur soluta
-        eius perferendis?
-      </p>
-      <p v-else="error">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </p>
-      <p v-show="success">
-        fugiat nisi praesentium eveniet nulla, rem eum velit aspernatur soluta
-        eius perferendis?
-      </p>
-
-      <button @click="a++">Add to A</button>
-      <button @click="b++">Add to B</button>
-      <p>A - {{a}}</p>
-      <p>B - {{b}}</p>
-      <p>Age + A = {{addToA}}</p>
-      <p>Age + B = {{addToB}}</p>
-
-      <h2>{{name}}</h2>
-      <label>Name:</label>
-      <input type="text" v-model="name" @keyup.113="changeName" />
-      <br />
-      <label>Checkbox value: {{cheked}}</label>
-      <input type="checkbox" v-model="cheked" />
-
-      <h2>{{counter}}</h2>
-      <button @click="counter++">+1</button>
-      <button @click.once="substract">-1</button>
-      <button @dblclick="counter=0">Resest</button>
+      <input type="text" @keyup.enter="addTask" v-model="currentTask" />
+      <ul>
+        <li v-for="task in tasks" :class="{'strike':task.isCompleted}">
+          <input
+            type="text"
+            v-if="task.isEditing"
+            @keyup.enter="editTask(task.text)"
+            v-model="editValue"
+          />
+          <span v-else @click="task.isCompleted = !task.isCompleted"
+            >{{task.text}}</span
+          >
+          <button @click="removeTask(task.text)">Delete</button>
+          <button @click="changeEditing(task.text)">Editing</button>
+        </li>
+      </ul>
     </div>
     <form @submit.prevent></form>
     <div @scroll.passive="onScroll"></div>
