@@ -8,6 +8,22 @@
   </head>
   <body>
     <div id="app">
+      <button @click="error = !error">Toggle Error</button>
+      <button @click="success = !success">Toggle Success</button>
+      <p v-if="error">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+        deleniti fuga et sapiente quaerat, rerum tenetur voluptas quisquam
+        fugiat nisi praesentium eveniet nulla, rem eum velit aspernatur soluta
+        eius perferendis?
+      </p>
+      <p v-else="error">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+      <p v-show="success">
+        fugiat nisi praesentium eveniet nulla, rem eum velit aspernatur soluta
+        eius perferendis?
+      </p>
+
       <button @click="a++">Add to A</button>
       <button @click="b++">Add to B</button>
       <p>A - {{a}}</p>

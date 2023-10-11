@@ -1,6 +1,8 @@
 new Vue({
   el: "#app",
   data: {
+    error: false,
+    success: false,
     a: 0,
     b: 0,
     age: 20,
