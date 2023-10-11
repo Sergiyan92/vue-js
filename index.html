@@ -8,6 +8,13 @@
   </head>
   <body>
     <div id="app">
+      <button @click="a++">Add to A</button>
+      <button @click="b++">Add to B</button>
+      <p>A - {{a}}</p>
+      <p>B - {{b}}</p>
+      <p>Age + A = {{addToA}}</p>
+      <p>Age + B = {{addToB}}</p>
+
       <h2>{{name}}</h2>
       <label>Name:</label>
       <input type="text" v-model="name" @keyup.113="changeName" />
