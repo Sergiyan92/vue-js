@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div id="app-one"><greet></greet></div>
+    <div id="app-one">
+      <h2>{{title}}</h2>
+      <input type="text" ref="input" />
+      <button @click="changeTitle">Submit</button>
+      <p ref="paragraph"></p>
+    </div>
 
     <form @submit.prevent></form>
     <div @scroll.passive="onScroll"></div>

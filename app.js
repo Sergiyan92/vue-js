@@ -1,17 +1,3 @@
-Vue.component("greet", {
-  template:
-    "<h2>{{title}} <button @click='changeTitle'>change title</button></h2>",
-  data: function () {
-    return {
-      title: "Title template",
-    };
-  },
-  methods: {
-    changeTitle: function () {
-      this.title = "Update title";
-    },
-  },
-});
 let one = new Vue({
   el: "#app-one",
   data: {
@@ -22,5 +8,10 @@ let one = new Vue({
       return "Hello world";
     },
   },
-  methods: {},
+  methods: {
+    changeTitle: function () {
+      // this.title = this.$refs.input.value;
+      console.log(this.$refs);
+    },
+  },
 });
