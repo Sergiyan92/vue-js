@@ -1,3 +1,17 @@
+Vue.component("greet", {
+  template:
+    "<h2>{{title}} <button @click='changeTitle'>change title</button></h2>",
+  data: function () {
+    return {
+      title: "Title template",
+    };
+  },
+  methods: {
+    changeTitle: function () {
+      this.title = "Update title";
+    },
+  },
+});
 let one = new Vue({
   el: "#app-one",
   data: {
@@ -10,21 +24,3 @@ let one = new Vue({
   },
   methods: {},
 });
-
-let two = new Vue({
-  el: "#app-two",
-  data: {
-    title: "Title two",
-  },
-  computed: {
-    greet: function () {
-      return "Hello world lozers";
-    },
-  },
-  methods: {
-    changeTitleOne: function () {
-      one.title = "Change from Vue";
-    },
-  },
-});
-two.title = "Change from outside!";

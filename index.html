@@ -7,14 +7,8 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div id="app-one">
-      {{title}} <br />
-      {{greet}}
-    </div>
-    <div id="app-two">
-      {{title}} <br />{{greet}}
-      <button @click="changeTitleOne">Change title one</button>
-    </div>
+    <div id="app-one"><greet></greet></div>
+
     <form @submit.prevent></form>
     <div @scroll.passive="onScroll"></div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
